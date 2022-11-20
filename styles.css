@@ -27,6 +27,7 @@ button:hover {
     rgb(72, 177, 234) 100.2%
   );
   transition: all 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .container {
