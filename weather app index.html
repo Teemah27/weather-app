@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weatherapp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e30e69de46.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form id="search-form">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control shadow-sm"
+              placeholder="Enter a city"
+              id="search-text-input"
+            />
+            <input
+              type="submit"
+              class="btn btn-outline-dark shadow-sm"
+              value="Search"
+            />
+          </div>
+        </form>
+        <button class="location" id="current-location">Current City</button>
+        <div class="row">
+          <div class="col-6">
+            <h1 id="city"></h1>
+            <ul>
+              <li id="day"></li>
+              <li id="date"></li>
+            </ul>
+          </div>
+
+          <div class="col-6">
+            <span class="current-temperature" id="temp">🌤</span>
+            <span class="units"
+              >°C |
+              <a href="#" id="fahrenheit"> °F</a>
+              <div class="static-temperature" id="description"></div>
+            </span>
+          </div>
+
+          <hr />
+          <div class="col-4">
+            <div class="temperature" id="high">°</div>
+            <span class="position">High</span>
+          </div>
+
+          <div class="col-4">
+            <li>
+              <span class="speed" id="wind"></span>
+              km/h
+            </li>
+            <span class="condition">Wind</span>
+          </div>
+
+          <div class="col-4">
+            <div class="daytime" id="bright">05.27</div>
+            <span class="dawn">Sunrise</span>
+          </div>
+
+          <div class="col-4">
+            <div class="low-temperature" id="low">°</div>
+            <span class="position">Low</span>
+          </div>
+
+          <div class="col-4">
+            <div class="chance" id="humidity">%</div>
+            <span class="forecast">Humidity</span>
+          </div>
+
+          <div class="col-4">
+            <div class="nightfall" id="dark">20.57</div>
+            <span class="dusk">Sunset</span>
+          </div>
+          <hr />
+
+          <p>Next 5 days</p>
+
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Tues</h5>
+                <div class="emoji">☀️</div>
+                <p class="card-text">10-21°</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Wed</h5>
+                <div class="emoji">🌥</div>
+                <p class="card-text">9-18°</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Thurs</h5>
+                <div class="emoji">🌧</div>
+                <p class="card-text">7-15°</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Fri</h5>
+                <div class="emoji">🌧</div>
+                <p class="card-text">7-13°</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Sat</h5>
+                <div class="emoji">🌧</div>
+                <p class="card-text">8-13°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="coder">Coded by Fatimah</p>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
