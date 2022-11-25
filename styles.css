@@ -29,21 +29,28 @@ button:hover {
   transition: all 200ms ease-in-out;
   cursor: pointer;
 }
-
-.container {
+small {
+  opacity: 0.7;
+  text-align: center;
+}
+.weather-app-wrapper {
   background: linear-gradient(
     89deg,
     rgb(21, 74, 189) 0.1%,
     rgb(26, 138, 211) 51.5%,
     rgb(72, 177, 234) 100.2%
   );
-  margin-top: 40px;
-  border: 1px solid blue;
-  border-radius: 10px;
-  padding: 40px auto;
-  font-family: Helvetica, Arial, sans-serif;
   max-width: 600px;
+  margin: 30px auto;
+  border: 1px solid blue;
+  border-radius: 5px;
 }
+
+.weather-app {
+  padding: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .card:hover {
   background: linear-gradient(
     89deg,
@@ -88,11 +95,9 @@ button:hover {
 .d-flex {
   margin-bottom: 40px;
 }
-.coder {
-  opacity: 0.7;
-  text-align: center;
-}
+
 .units {
   position: relative;
+  font-size: 16px;
   top: -10px;
 }
