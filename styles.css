@@ -6,7 +6,7 @@ h1 {
   padding-top: 40px;
   font-weight: bold;
   font-size: 30px;
-  margin: 0;
+  margin-bottom: 0;
 }
 li {
   list-style: none;
@@ -40,9 +40,9 @@ button:hover {
   margin-top: 40px;
   border: 1px solid blue;
   border-radius: 10px;
-  padding: 40px;
+  padding: 40px auto;
   font-family: Helvetica, Arial, sans-serif;
-  max-width: 80%;
+  max-width: 600px;
 }
 .card:hover {
   background: linear-gradient(
@@ -89,8 +89,8 @@ button:hover {
   margin-bottom: 40px;
 }
 .coder {
-  text-align: center;
   opacity: 0.7;
+  text-align: center;
 }
 .units {
   position: relative;
