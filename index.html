@@ -20,135 +20,133 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app-wrapper">
-        <div class="weather-app">
-          <form id="search-form">
-            <div class="input-group">
-              <input
-                type="search"
-                class="form-control shadow-sm"
-                placeholder="Enter a city"
-                id="search-text-input"
-              />
-              <input
-                type="submit"
-                class="btn btn-outline-dark shadow-sm"
-                value="Search"
-              />
-            </div>
-          </form>
-          <button class="location" id="current-location">Current City</button>
-          <div class="row">
-            <div class="col-6">
-              <h1 id="city"></h1>
-              <ul>
-                <li>last updated: <span id="date"></span></li>
-              </ul>
-            </div>
+      <div class="weather-app">
+        <form id="search-form">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control shadow-sm"
+              placeholder="Enter a city"
+              id="search-text-input"
+            />
+            <input
+              type="submit"
+              class="btn btn-outline-dark shadow-sm"
+              value="Search"
+            />
+          </div>
+        </form>
+        <button class="location" id="current-location">Current City</button>
+        <div class="row">
+          <div class="col-6">
+            <h1 id="city"></h1>
+            <ul>
+              <li>last updated: <span id="date"></span></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <img src="#" id="icon" /><span
+              class="current-temperature"
+              id="temp"
+            ></span>
+            <span class="units"
+              ><a href="#" id="celsius" class="active">°C </a>|
+              <a href="#" id="fahrenheit">°F</a>
+              <li class="static-temperature" id="description"></li>
+            </span>
+          </div>
 
-            <div class="col-6">
-              <img src="#" id="icon" />
+          <hr />
+          <div class="col-4">
+            <div class="temperature">High</div>
+            <span id="high"></span>°
+          </div>
 
-              <span class="current-temperature" id="temp"></span>
-              <span class="units"
-                >°C |
-                <a href="#" id="fahrenheit">°F</a>
-                <li class="static-temperature" id="description"></li>
-              </span>
-            </div>
+          <div class="col-4">
+            <div class="speed">Wind</div>
+            <span id="wind"></span> km/h
+          </div>
 
-            <hr />
-            <div class="col-4">
-              <div class="temperature">High</div>
-              <span id="high"></span>°
-            </div>
+          <div class="col-4">
+            <div class="daytime">Sunrise</div>
+            <span id="bright"></span>
+          </div>
 
-            <div class="col-4">
-              <div class="speed">Wind</div>
-              <span id="wind"></span> km/h
-            </div>
+          <div class="col-4">
+            <div class="low-temperature">Low</div>
+            <span id="low"></span>°
+          </div>
 
-            <div class="col-4">
-              <div class="daytime">Sunrise</div>
-              <span id="bright"></span>
-            </div>
+          <div class="col-4">
+            <div class="chance">Humidity</div>
+            <span id="humidity"></span>%
+          </div>
 
-            <div class="col-4">
-              <div class="low-temperature">Low</div>
-              <span id="low"></span>°
-            </div>
+          <div class="col-4">
+            <div class="nightfall">Sunset</div>
+            <span id="dark"></span>
+          </div>
+          <hr />
 
-            <div class="col-4">
-              <div class="chance">Humidity</div>
-              <span id="humidity"></span>%
-            </div>
+          <p>Next 5 days</p>
 
-            <div class="col-4">
-              <div class="nightfall">Sunset</div>
-              <span id="dark"></span>
-            </div>
-            <hr />
-
-            <p>Next 5 days</p>
-
-            <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <div class="card text-center" style="width: 8rem">
-                <div class="card-body">
-                  <h5 class="card-title">Tues</h5>
-                  <div class="emoji">☀️</div>
-                  <p class="card-text">10-21°</p>
-                </div>
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Tues</h5>
+                <div class="emoji">☀️</div>
+                <p class="card-text">10-21°</p>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <div class="card text-center" style="width: 8rem">
-                <div class="card-body">
-                  <h5 class="card-title">Wed</h5>
-                  <div class="emoji">🌥</div>
-                  <p class="card-text">9-18°</p>
-                </div>
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Wed</h5>
+                <div class="emoji">🌥</div>
+                <p class="card-text">9-18°</p>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <div class="card text-center" style="width: 8rem">
-                <div class="card-body">
-                  <h5 class="card-title">Thurs</h5>
-                  <div class="emoji">🌧</div>
-                  <p class="card-text">7-15°</p>
-                </div>
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Thurs</h5>
+                <div class="emoji">🌧</div>
+                <p class="card-text">7-15°</p>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <div class="card text-center" style="width: 8rem">
-                <div class="card-body">
-                  <h5 class="card-title">Fri</h5>
-                  <div class="emoji">🌧</div>
-                  <p class="card-text">7-13°</p>
-                </div>
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Fri</h5>
+                <div class="emoji">🌧</div>
+                <p class="card-text">7-13°</p>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <div class="card text-center" style="width: 8rem">
-                <div class="card-body">
-                  <h5 class="card-title">Sat</h5>
-                  <div class="emoji">🌧</div>
-                  <p class="card-text">8-13°</p>
-                </div>
+          <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+            <div class="card text-center" style="width: 8rem">
+              <div class="card-body">
+                <h5 class="card-title">Sat</h5>
+                <div class="emoji">🌧</div>
+                <p class="card-text">8-13°</p>
               </div>
             </div>
           </div>
         </div>
-
-        <small>
-          <a href="https://github.com/Teemah27/weather-app" target="_blank"
-            >Open-source code </a
-          >by Fatimah
-        </small>
       </div>
+
+      <small>
+        <a href="https://github.com/Teemah27/weather-app" target="_blank"
+          >Open-source code </a
+        >by Fatimah
+      </small>
     </div>
     <script src="scripts.js"></script>
   </body>
