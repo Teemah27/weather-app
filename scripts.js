@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -39,10 +40,13 @@ function showTemperature(response) {
   let h1 = document.querySelector("#city");
   h1.innerHTML = response.data.name;
 
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
-  console.log(response.data.main.temp);
   document.querySelector("#low").innerHTML = Math.round(
     response.data.main.temp_min
   );
@@ -57,6 +61,12 @@ function showTemperature(response) {
     response.data.weather[0].description;
   document.querySelector("#bright").innerHTML = response.data.sys.sunrise;
   document.querySelector("#dark").innerHTML = response.data.sys.sunset;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 function getCurrentLocation(position) {
@@ -74,10 +84,6 @@ function showPosition(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitResult);
-
-let currentDate = document.querySelector("#date");
-let currentTime = new Date();
-currentDate.innerHTML = formatDate(currentTime);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", showPosition);
