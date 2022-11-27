@@ -40,6 +40,20 @@ function showTemperature(response) {
   let h1 = document.querySelector("#city");
   h1.innerHTML = response.data.name;
 
+  function formatTime(timestamp) {
+    let time = new Date(timestamp);
+    let hours = time.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+
+    let minutes = time.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+
+    return `${hours}:${minutes}`;
+  }
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
@@ -57,8 +71,12 @@ function showTemperature(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#bright").innerHTML = response.data.sys.sunset;
-  document.querySelector("#dark").innerHTML = response.data.sys.sunset;
+  document.querySelector("#bright").innerHTML = formatTime(
+    response.data.sys.sunrise * 1000
+  );
+  document.querySelector("#dark").innerHTML = formatTime(
+    response.data.sys.sunset * 1000
+  );
   document
     .querySelector("#icon")
     .setAttribute(
