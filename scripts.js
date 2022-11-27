@@ -57,7 +57,7 @@ function showTemperature(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#bright").innerHTML = response.data.sys.sunrise;
+  document.querySelector("#bright").innerHTML = response.data.sys.sunset;
   document.querySelector("#dark").innerHTML = response.data.sys.sunset;
   document
     .querySelector("#icon")
