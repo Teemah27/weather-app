@@ -54,6 +54,7 @@ function showTemperature(response) {
 
     return `${hours}:${minutes}`;
   }
+
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
@@ -84,7 +85,29 @@ function showTemperature(response) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
+  let forecastHTML = "";
+  forecastHTML =
+    forecastHTML +
+    `<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+              <div class="card text-center" style="width: 8rem">
+                <div class="card-body">
+                  <h5 class="card-title">Wed</h5>
+                  <div class="emoji">🌥</div>
+                  <span class="card-text" id="wednesday-min">9°</span>-<span
+                    id="wednesday-max"
+                    >18°</span
+                  >
+                </div>
+                </div>
+              </div>
+            </div>
+  `;
+  forecastElement.innerHTML = forecastHTML;
+}
 function getCurrentLocation(position) {
   let apiKey = "af12a2daa1c4c04cebdde84de8f2f6a6";
   let latitude = position.coords.latitude;
@@ -126,3 +149,4 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", showPosition);
 
 search("London");
+displayForecast();
