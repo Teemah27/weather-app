@@ -37,41 +37,57 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function displayForecast(response) {
-  console.log(response);
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  let forecastHTML = `<div class="row">`;
+  let forecast = response.data.daily;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-lg-3 col-md-4 col-sm-5 mb-3">
         <div class="card text-center" style="width: 8rem">
           <div class="card-body">
-            <h5 class="card-title">${day}</h5>
-            <div class="emoji">🌥</div>
+            <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
+                <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-temperatures">
             <span class="card-text" id="wednesday-min">
-              9°
+              ${Math.round(forecastDay.temp.min)}°
             </span>
-            -<span id="wednesday-max">18°</span>
+            - <span id="wednesday-max">${Math.round(
+              forecastDay.temp.max
+            )}°</span>
           </div>
         </div>
       </div>
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coord) {
-  let apiKey = "f5029b784306910c19746e40c14d6cd3";
+  console.log(coord);
+  let apiKey = "4c9b53e4f8f5eb00df5915bdca340605";
   let lat = coord.lat;
   let lon = coord.lon;
-  let units = "metric";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=-9.13333&lat=38.71667&key=${apiKey}&units=${units}`;
-  console.log(apiUrl);
-  // axios.get(apiUrl).then(displayForecast);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
@@ -167,4 +183,3 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", showPosition);
 
 search("London");
-displayForecast();
