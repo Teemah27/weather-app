@@ -106,3 +106,6 @@ small {
   font-size: 16px;
   top: -12px;
 }
+.weather-temperature-min {
+  opacity: 0.7;
+}
