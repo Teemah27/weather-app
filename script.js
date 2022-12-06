@@ -43,6 +43,7 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
+
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -54,7 +55,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-lg-3 col-md-4 col-sm-5 mb-3">
-        <div class="card text-center" style="width: 8rem">
+        <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
                 <img
@@ -73,6 +74,7 @@ function displayForecast(response) {
             )}°</div>
           </div>
         </div>
+      </div>
       </div>
     `;
     }

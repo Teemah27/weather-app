@@ -20,92 +20,90 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form id="search-form">
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control shadow-sm"
-              placeholder="Enter a city"
-              id="search-text-input"
-            />
-            <input
-              type="submit"
-              class="btn btn-outline-dark shadow-sm"
-              value="Search"
-            />
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control shadow-sm"
+                placeholder="Enter a city"
+                id="search-text-input"
+              />
+              <input
+                type="submit"
+                class="btn btn-outline-dark shadow-sm"
+                value="Search"
+              />
+            </div>
+          </form>
+          <button class="location" id="current-location">
+            Current Location
+          </button>
+          <div class="row">
+            <div class="col-6">
+              <h1 id="city"></h1>
+              <ul>
+                <li>last updated: <span id="date"></span></li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <img src="#" id="icon" /><span
+                class="current-temperature"
+                id="temp"
+              ></span>
+              <span class="units"
+                >°C
+                <li class="static-temperature" id="description"></li
+              ></span>
+            </div>
           </div>
-        </form>
-        <button class="location" id="current-location">Current City</button>
-        <div class="row">
-          <div class="col-6">
-            <h1 id="city"></h1>
-            <ul>
-              <li>last updated: <span id="date"></span></li>
-            </ul>
+
+          <hr />
+          <div class="row">
+            <div class="col-4">
+              <div class="temperature">High</div>
+              <span id="high"></span>°
+            </div>
+
+            <div class="col-4">
+              <div class="speed">Wind</div>
+              <span id="wind"></span> m/s
+            </div>
+
+            <div class="col-4">
+              <div class="daytime">Sunrise</div>
+              <span id="bright"></span>
+            </div>
+
+            <div class="col-4">
+              <div class="low-temperature">Low</div>
+              <span id="low"></span>°
+            </div>
+
+            <div class="col-4">
+              <div class="chance">Humidity</div>
+              <span id="humidity"></span>%
+            </div>
+
+            <div class="col-4">
+              <div class="nightfall">Sunset</div>
+              <span id="dark"></span>
+            </div>
           </div>
-          <div class="col-6">
-            <img src="#" id="icon" /><span
-              class="current-temperature"
-              id="temp"
-            ></span>
-            <span class="units"
-              >°C
-              <li class="static-temperature" id="description"></li
-            ></span>
-          </div>
+          <hr />
+
+          <p>Next 5 days</p>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
-
-        <hr />
-        <div class="row">
-          <div class="col-4">
-            <div class="temperature">High</div>
-            <span id="high"></span>°
-          </div>
-
-          <div class="col-4">
-            <div class="speed">Wind</div>
-            <span id="wind"></span> m/s
-          </div>
-
-          <div class="col-4">
-            <div class="daytime">Sunrise</div>
-            <span id="bright"></span>
-          </div>
-
-          <div class="col-4">
-            <div class="low-temperature">Low</div>
-            <span id="low"></span>°
-          </div>
-
-          <div class="col-4">
-            <div class="chance">Humidity</div>
-            <span id="humidity"></span>%
-          </div>
-
-          <div class="col-4">
-            <div class="nightfall">Sunset</div>
-            <span id="dark"></span>
-          </div>
-        </div>
-        <hr />
-
-        <p>Next 5 days</p>
-        <div class="weather-forecast" id="forecast"></div>
-
-        <small>
-          <a href="https://github.com/Teemah27/weather-app" target="_blank"
-            >Open-source code </a
-          >by Fatimah
-        </small>
       </div>
-    </div>
-    <script
-      async
-      src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js"
-      crossorigin="anonymous"
-    ></script>
 
+      <small>
+        <a href="https://github.com/Teemah27/weather-app" target="_blank"
+          >Open-source code </a
+        >by Fatimah
+      </small>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
