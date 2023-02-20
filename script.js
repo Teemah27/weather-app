@@ -54,7 +54,7 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-lg-3 col-md-4 col-sm-5 mb-3">
+        `<div class=" col-md-4 col-sm-5 mb-3">
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
